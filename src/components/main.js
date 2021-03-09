@@ -8,10 +8,22 @@ const Main = (props) => {
   return (
     <main className="main">
       <form>
-        <General data={props.data} functions={props.functions} />
-        <Experience />
-        <Education />
-        <Button functions={props.functions} />
+        <General
+          statusData={props.statusData}
+          statusFunctions={props.statusFunctions}
+        />
+        <Experience
+          statusData={props.statusData}
+          statusFunctions={props.statusFunctions}
+        />
+        <Education
+          statusData={props.statusData}
+          statusFunctions={props.statusFunctions}
+        />
+        <Button
+          statusData={props.statusData}
+          statusFunctions={props.statusFunctions}
+        />
       </form>
     </main>
   );

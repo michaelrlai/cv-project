@@ -1,7 +1,29 @@
-.experience {
+.experience .title {
   text-align: start;
   margin-top: 20px;
   font-weight: 600;
   border-bottom: 1px solid black;
-  font-size: 24px;
+  font-size: 20px;
+}
+
+.experience #title,
+.experience #company {
+  text-align: start;
+  width: 50%;
+}
+
+.experience #dates,
+.experience #location {
+  width: 50%;
+  text-align: end;
+}
+
+#responsibilities {
+  width: 100%;
+  text-align: start;
+}
+
+.titleDatesContainer,
+.companyLocationContainer {
+  display: flex;
 }

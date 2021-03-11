@@ -1,9 +1,23 @@
+.experience div,
+.experience input {
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}
+
+.experience input:hover,
+.experience input:focus {
+  background-color: rgba(245, 245, 245, 1);
+}
+
 .experience .title {
   text-align: start;
   margin-top: 20px;
   font-weight: 600;
   border-bottom: 1px solid black;
   font-size: 20px;
+  border-radius: 0;
 }
 
 .experience #title,
@@ -26,4 +40,18 @@
 .titleDatesContainer,
 .companyLocationContainer {
   display: flex;
+}
+
+#title,
+#dates {
+  font-weight: 700;
+}
+
+#company,
+#location {
+  font-style: italic;
+}
+
+.deleteButtonContainer {
+  text-align: start;
 }

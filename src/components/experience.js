@@ -1,5 +1,6 @@
 import "../styles/experience.css";
 import { useState } from "react";
+import uniqid from "uniqid";
 
 const Experience = (props) => {
   const [addStatusOn, setAddStatusOn] = useState(false);
@@ -7,6 +8,7 @@ const Experience = (props) => {
   const [data, setData] = useState([]);
 
   const [input, setInput] = useState({
+    id: uniqid(),
     title: "",
     company: "",
     location: "",
@@ -24,6 +26,7 @@ const Experience = (props) => {
     const joined = data.concat(input);
     setData(joined);
     setInput({
+      id: uniqid(),
       title: "",
       company: "",
       location: "",
@@ -36,6 +39,7 @@ const Experience = (props) => {
   const cancelSaveExperience = (e) => {
     e.preventDefault();
     setInput({
+      id: uniqid(),
       title: "",
       company: "",
       location: "",
@@ -95,7 +99,7 @@ const Experience = (props) => {
       <div className="title">WORK EXPERIENCE</div>
       {data.map((experience) => {
         return (
-          <div>
+          <div key={experience.id}>
             <div className="titleDatesContainer">
               <div id="title">{experience.title}</div>
               <div id="dates">{experience.dates}</div>
@@ -105,11 +109,14 @@ const Experience = (props) => {
               <div id="location">{experience.location}</div>
             </div>
             <div id="responsibilities">{experience.responsibilities}</div>
+            <div className="deleteButtonContainer">
+              {props.statusData.editModeOn && <button>Delete</button>}
+            </div>
             <br></br>
           </div>
         );
       })}
-      {addStatusOn === true && (
+      {addStatusOn && (
         <div>
           <input id="title" placeholder="Title" onChange={titleChange} />
           <input
@@ -135,7 +142,7 @@ const Experience = (props) => {
       {props.statusData.editModeOn === true && addStatusOn === false && (
         <button onClick={addExperience}>Add experience</button>
       )}
-      <div>
+      {/*       <div>
         <button
           onClick={(e) => {
             e.preventDefault();
@@ -152,7 +159,7 @@ const Experience = (props) => {
         >
           Data log
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

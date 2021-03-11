@@ -8,4 +8,5 @@ main form {
   width: 800px;
   background-color: white;
   padding: 0 50px 0 50px;
+  box-shadow: 5px 10px 18px #888888;
 }

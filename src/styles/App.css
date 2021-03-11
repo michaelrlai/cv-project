@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color: dodgerblue;
 }
 
 .App-logo {
@@ -36,4 +35,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
 }

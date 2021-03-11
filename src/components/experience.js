@@ -14,6 +14,7 @@ const Experience = (props) => {
     location: "",
     dates: "",
     responsibilities: "",
+    expEditModeOn: false,
   });
 
   const addExperience = (e) => {
@@ -94,12 +95,28 @@ const Experience = (props) => {
     });
   };
 
+  const deleteExperience = (e) => {
+    e.preventDefault();
+    setData((prevState) => {
+      const newState = prevState.filter(
+        (exp) => exp.id !== e.target.parentNode.parentNode.id
+      );
+      return newState;
+    });
+  };
+
+  const editExperience = (e) => {
+    e.preventDefault();
+    console.log(e.target.parentNode.parentNode);
+    console.log(e.target.parentNode.parentNode.id);
+  };
+
   return (
     <div className="experience">
       <div className="title">WORK EXPERIENCE</div>
       {data.map((experience) => {
         return (
-          <div key={experience.id}>
+          <div key={experience.id} id={experience.id}>
             <div className="titleDatesContainer">
               <div id="title">{experience.title}</div>
               <div id="dates">{experience.dates}</div>
@@ -109,8 +126,13 @@ const Experience = (props) => {
               <div id="location">{experience.location}</div>
             </div>
             <div id="responsibilities">{experience.responsibilities}</div>
-            <div className="deleteButtonContainer">
-              {props.statusData.editModeOn && <button>Delete</button>}
+            <div className="buttonContainer">
+              {props.statusData.editModeOn && (
+                <>
+                  <button onClick={editExperience}>Edit</button>
+                  <button onClick={deleteExperience}>Delete</button>
+                </>
+              )}
             </div>
             <br></br>
           </div>

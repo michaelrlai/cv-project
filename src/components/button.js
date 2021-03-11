@@ -4,9 +4,9 @@ const Button = (props) => {
   return (
     <div>
       {props.statusData.editModeOn ? (
-        <button onClick={props.statusFunctions.editMode}>Save</button>
+        <button onClick={props.statusFunctions.editMode}>Save CV</button>
       ) : (
-        <button onClick={props.statusFunctions.editMode}>Edit</button>
+        <button onClick={props.statusFunctions.editMode}>Edit CV</button>
       )}
     </div>
   );
